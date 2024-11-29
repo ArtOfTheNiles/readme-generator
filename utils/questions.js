@@ -1,32 +1,47 @@
-export default questions = [
+import colors from 'colors';
+export const questions = [
     {
         type: 'input',
         name: 'project-name',
-        message: 'What is your project called?'
+        message: colors.underline('What is your project called?')
     },{
         type: 'input',
         name: 'summary',
-        message: 'Describe your project in a few sentences. Why does it need to be built? What problems does it solve? What does it help you learn?'
+        message: colors.underline('Describe your project in a few sentences. Why does it need to be built? What problems does it solve? What does it help you learn?')
     },{
         type: 'input',
         name: '',
         message: ''
     },{// #LICENSE
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'What is the license you want to have, or already have for this project?',
+        message: colors.underline('What is the license you want to have, or already have for this project?'),
         choices: [
             'None',
             'Apache 2.0',
             'GNU General Public License v3.0',
             'Creative Commons 0 v1.0',
             'MIT',
-            'Other',
+            'Other'
+        ],
+        default: 'None'
+    },{// #TABLE OF CONTENTS
+        type: 'checkbox',
+        name: 'table-of-contents',
+        message: colors.underline('What Sections do you want in your Table of Contents?'),
+        choices: [
+            'None',
+            'Apache 2.0',
+            'GNU General Public License v3.0',
+            'Creative Commons 0 v1.0',
+            'MIT',
+            'Other'
         ],
         default: 'None'
     }
 ];
 
+export default questions;
 
 // #INSTALLATION
 // Does your code require installation? y/n

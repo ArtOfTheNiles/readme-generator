@@ -23,5 +23,6 @@
   "dependencies": {
     "colors": "^1.4.0",
     "inquirer": "^12.1.0"
-  }
+  },
+  "type":"module"
 }

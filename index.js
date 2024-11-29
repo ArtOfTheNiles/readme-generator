@@ -13,19 +13,20 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-
-    inquirer.prompt(questions)
-    .then((answers) => {
-        // Use user feedback for... whatever!!
-      })
-      .catch((error) => {
-        if (error.isTtyError) {
-          // Prompt couldn't be rendered in the current environment
-        } else {
-          // Something else went wrong
-        }
-      });
-
+console.log(colors.rainbow('Start the Party!'));
+  inquirer.prompt(questions)
+  .then((answers) => {
+    // Use user feedback for... whatever!!
+    console.log(colors.zalgo(answers)); //wth does zalgo mean? Somehow we don't even get here!
+    })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+  console.log(colors.zalgo('this is after the prompts...'));
 }
 
 // Function call to initialize app
