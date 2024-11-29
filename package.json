@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "This simple Question and Response software helps you make a README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtOfTheNiles/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "artoftheniles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArtOfTheNiles/readme-generator/issues"
+  },
+  "homepage": "https://github.com/ArtOfTheNiles/readme-generator#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^12.1.0"
+  }
+}
