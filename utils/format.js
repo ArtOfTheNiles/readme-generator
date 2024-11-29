@@ -12,7 +12,7 @@ return `## Installation
 `
 };
 
-// This function takes in a URL
+// This function expects a URL
 const formatDocumentation = ( documentation ) => {
 return `## Documentation
 
@@ -20,7 +20,7 @@ ${documentation ? `Read the [Documentation](${documentation}) here.` : ''}
 `
 }
 
-// This function takes in URLs
+// This function expects URLs
 const formatContribution = ( bugReport, review ) => {
 `## Contribution
 
@@ -30,7 +30,6 @@ ${review ? `* [Review code progression](${review})` : ''}
 `
 };
 
-// TODO: This function should ideally choose from an enumerated list. How to do in Inquirer?
 const formatLicense = ( licenseChoice ) => {
     let output = '';
 switch (licenseChoice){
@@ -52,26 +51,38 @@ switch (licenseChoice){
     default:
         output = 'Licensing information is coming soon! Please be patient while the project gets started.';
 }
+
+// (Template Literal Indent)
 return `## License
 
-${output};
+${output}
 `
 };
 
-const formatTableOfContents = () => {
-    //TODO: Add functionality beyond notes
+// Expects an array of specific values
+const formatTableOfContents = ( toc ) => {
+    if(toc.length === 0){
+        return;
+    }
+
+    const summary = toc.Summary ? '- [Summary](#summary)\n': '';
+    const installation = toc.Installation ? '- [Installation](#installation)\n': '';
+    const usage = toc.Usage ? '- [Usage](#usage)\n': '';
+    const contribution = toc.Contribution ? '- [Contribution](#contribution)\n': '';
+    const collaboration = toc.Collaboration ? '- [Collaboration](#collaboration)\n': '';
+    const credits = toc.Credits ? '- [Credits](#credits)\n': '';
+    const license = toc.License ? '- [License](#license)\n': '';
+
+// (Template Literal Indent)
 return `## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+${summary}${installation}${usage}${contribution}${collaboration}${credits}${license}
+
 `
 };
 
 const sectionBreak = () => {
-    return`
-================================================================
+return`================================================================
 
 `
 }

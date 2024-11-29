@@ -17,7 +17,7 @@ console.log(colors.rainbow('Start the Party!'));
   inquirer.prompt(questions)
   .then((answers) => {
     // Use user feedback for... whatever!!
-    console.log(colors.zalgo(answers)); //wth does zalgo mean? Somehow we don't even get here!
+    console.log(colors.grey(answers)); // Somehow we don't even get here!
     })
   .catch((error) => {
     if (error.isTtyError) {
@@ -26,7 +26,6 @@ console.log(colors.rainbow('Start the Party!'));
       // Something else went wrong
     }
   });
-  console.log(colors.zalgo('this is after the prompts...'));
 }
 
 // Function call to initialize app
