@@ -1,33 +1,55 @@
 import colors from 'colors';
 
+//Built-in affordance disappears on spacebar input, this is to supplement.
+//Maybe refactor this out.
+const cbFlair = [ 
+    colors.green('(-- '),
+    colors.green(' || '),
+    colors.green(' --)'),
+    colors.white('Arrows'),
+    colors.white('Spacebar'),
+    colors.white('Enter')
+]
+
+const checkboxGuideText = colors.grey(` ${cbFlair[0]} Use ${cbFlair[3]} to navigate ${cbFlair[1]} ${cbFlair[4]} to choose ${cbFlair[1]} ${cbFlair[5]} to finish ${cbFlair[2]}\n`);
+
+
 export const questions = [
-    {// #NAME
+    {
         type: 'input',
-        name: 'project-name',
-        message: colors.underline('What is your project called?')
-    },{// #REPOSITORY
+        name: 'projectName', // #NAME
+        message: colors.underline('What is your project called?\n'),
+        default: 'Project-Name'
+    },{
         type: 'input',
-        name: 'repository',
-        message: colors.underline('Provide a link to your project repository:'),
+        name: 'repository', // #REPOSITORY
+        message: colors.underline('Provide a link to your project repository:\n'),
         default: 'https://github.com/ArtOfTheNiles/readme-generator'
-    },{// #SUMMARY
+    },{
         type: 'input',
-        name: 'summary',
-        message: colors.underline('Describe your project in a few sentences. Why does it need to be built? What problems does it solve? What does it help you learn?')
-    },{// #INSTALLATION
-        type: 'input',
-        name: 'installation',
-        message: colors.underline('Does your project require installation? If so, how?'),
-        default: 'No installation required'
-    },{// #USAGE
-        type: 'input',
-        name: 'usage',
-        message: colors.underline('Describe the steps to using your project, how does a user get from A to B?'),
-        default: 'It is the peak of hubris to think people will understand your program with no directions.'
-    },{// #CONTRIBUTION
+        name: 'summary', // #SUMMARY
+        message: colors.underline('Describe your project in a few sentences.\n') + colors.grey('  Why does it need to be built? What problems does it solve? What does it help you learn?\n'),
+        default: 'Here is a little bit about the project...'
+    },{
         type: 'checkbox',
-        name: 'contribution',
-        message: colors.underline('What are some ways that other can contribute to the development of your project?'),
+        name: 'installation', // #INSTALLATION
+        message: colors.underline('Does your project require installation? If so, how?\n') + colors.grey(' (- Note: Each choice will populate a template for you to fill out further -)\n') + checkboxGuideText,
+        choices: [
+            'Web-App(URL)',
+            'Desktop-App(Windows)',
+            'Desktop-App(MacOS)',
+            'Desktop-App(Linux)',
+            'Terminal-App(Node)'
+        ],
+    },{
+        type: 'input',
+        name: 'usage', // #USAGE
+        message: colors.underline('Describe the steps to using your project, how does a user get from A to B?\n') + colors.gray('It is the peak of hubris to think people will understand your program with no directions.\n'),
+        default: 'To begin, just...'
+    },{
+        type: 'checkbox',
+        name: 'contribution', // #CONTRIBUTION
+        message: colors.underline('What are some ways that other can contribute to the development of your project?\n') + checkboxGuideText,
         choices: [{
             name:'bug-reports',
             checked: true
@@ -37,15 +59,15 @@ export const questions = [
         },{
             name:'donations',
         }],
-    },{// #CREDITS/COLLABORATORS
+    },{
         type: 'input',
-        name: 'credits',
-        message: colors.underline('List any collaborators and credit major packages:'),
+        name: 'credits', // #CREDITS/COLLABORATORS
+        message: colors.underline('List any collaborators and credit major packages:\n'),
         default: 'None'
-    },{// #LICENSE
+    },{
         type: 'list',
-        name: 'license',
-        message: colors.underline('What is the license you want to have, or already have for this project?'),
+        name: 'license', // #LICENSE
+        message: colors.underline('What is the license you are using, or intend to use?\n'),
         choices: [
             'None',
             'Apache 2.0',
@@ -55,10 +77,10 @@ export const questions = [
             'Other'
         ],
         default: 'None'
-    },{// #TABLE OF CONTENTS
+    },{
         type: 'checkbox',
-        name: 'table-of-contents',
-        message: colors.underline('What Sections do you want in your Table of Contents?') + colors.grey('(Use Arrows to navigate | Spacebar to choose | Enter to finish)'), //Built-in affordance disappears on input, this is to supplement.
+        name: 'tableOfContents', // #TABLE OF CONTENTS
+        message: colors.underline('What Sections do you want in your Table of Contents?\n') + checkboxGuideText, 
         choices: [{
             name:'Summary',
             checked: true
@@ -91,21 +113,3 @@ export const questions = [
 ];
 
 export default questions;
-
-// #INSTALLATION
-// Does your code require installation? y/n
-// if Y: How do you install your code?
-
-// #CONTRIBUTION
-// Are there ways to contribute to your codebase? y/n
-// if Y: 
-
-// #USAGE
-// How do you use your code? Walk through instructions and samples are advised. (Further editing will likely be necessary)
-
-// #COLLABORATORS
-// List any collaborators
-
-
-// 
-

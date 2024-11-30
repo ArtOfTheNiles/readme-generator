@@ -7,6 +7,7 @@
 node_modules/
 .DS_store/
 utils/README.md
+exports/
 
 # User-specific files
 *.rsuser

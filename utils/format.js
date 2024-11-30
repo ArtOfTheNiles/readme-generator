@@ -1,6 +1,7 @@
-const format = ({  }) => {
+//This function expects the output from ./utils/questions.js
+export const format = (answers) => {
     // TODO: plan to format all strings through this fucntion
-    return `
+    return `${answers}
     `
 };
 
@@ -14,6 +15,8 @@ return `## Installation
 
 // This function expects a URL
 const formatDocumentation = ( documentation ) => {
+    if(!documentation){ return ''};
+
 return `## Documentation
 
 ${documentation ? `Read the [Documentation](${documentation}) here.` : ''}
@@ -21,12 +24,17 @@ ${documentation ? `Read the [Documentation](${documentation}) here.` : ''}
 }
 
 // This function expects URLs
-const formatContribution = ( bugReport, review ) => {
-`## Contribution
+const formatContribution = ( bugReport, review, donations, url = 'https://' ) => {
+    if(!bugReport && !review && !donations){ return ''};
+
+    const outBugReport = bugReport ? `* [Submit bugs or make requests](${url}/issues)\n`: '';
+    const outReview = review ? `* [Review code progression](${url}/pulls)\n`: '';
+    const outDonations = donations ? `* [Keep the project alive](about:blank)\n`: '';
+
+return`## Contribution
 
 For those interested, here are ways that you can contribute to the project:
-${bugReport ? `* [Submit bugs or make requests](${bugReport})` : ''}
-${review ? `* [Review code progression](${review})` : ''}
+${outBugReport}${outReview}${outDonations}
 `
 };
 

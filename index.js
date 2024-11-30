@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 import fs from 'node:fs';
 import colors from 'colors';
 import inquirer from 'inquirer';
@@ -6,18 +5,33 @@ import inquirer from 'inquirer';
 import { questions } from './utils/questions.js';
 import format from './utils/format.js';
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(`./exports/${fileName}`, data);
+const startMessage = [
+  colors.red('! Warning: '),
+  colors.yellow('This program is currently limited to '),
+  colors.yellow.underline('github.com'),
+  colors.yellow(' repositories'),
+  colors.red(' (!)')
+]
+
+//This program just writes READMEs
+function writeToFile(data) {
+  const parseData = JSON.stringify(data);
+    fs.writeFile('./exports/README.md', parseData, function (error){
+    if(error) {
+      console.error('Problem writing file: ', error)
+    };
+    console.log(colors.yellow("I should have written a file!")); //Not getting here.
+  });
 }
 
-// TODO: Create a function to initialize app
 function init() {
-console.log(colors.rainbow('Start the Party!'));
+  console.log(startMessage.join(''));
+
   inquirer.prompt(questions)
   .then((answers) => {
-    // Use user feedback for... whatever!!
-    console.log(colors.grey(answers)); // Somehow we don't even get here!
+    const outputData = format(answers);
+    console.log(`This is what 'answers' looks like before the write to file function\n${answers}`);
+    writeToFile(answers);
     })
   .catch((error) => {
     if (error.isTtyError) {
@@ -28,5 +42,4 @@ console.log(colors.rainbow('Start the Party!'));
   });
 }
 
-// Function call to initialize app
 init();
