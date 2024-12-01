@@ -6,15 +6,16 @@ const ls = [
     '(LICENSE.txt) license. '
 ]
 
-export const formatLicense = ( licenseChoice ) => {
+export const formatLicense = ( inputLicense ) => {
 
     let output = '';
-    if(!licenseChoice || licenseChoice == `None`){
+    if(!inputLicense || inputLicense == `None`){
         output = 'This project is currently unlicensed, tell your friends!';
-    }else if(licenseChoice == `Other`){
+    }else if(inputLicense == `Other`){
         output = 'Licensing information is coming soon! Please be patient while the project gets started.';
     }else{
-        output = `${ls[0]}${licenseChoice.value}${ls[1]}${licenseChoice.badge}`;
+        const currentLicense = licenses.find(({ name }) => name === inputLicense);
+        output = `${ls[0]}${currentLicense.value}${ls[1]}\n${currentLicense.badge}`;
     }
 
     return `## License\n\n${output}\n`

@@ -1,5 +1,7 @@
 import colors from 'colors';
 import licenses from './licenses.js';
+import installations from './installations.js'
+import tableOfContents from './tableofcontents.js';
 
 //Built-in affordance disappears on spacebar input, this is to supplement.
 const cbFlair = [ 
@@ -32,16 +34,15 @@ export const questions = [
         message: colors.underline('Describe your project in a few sentences.\n') + colors.grey('  Why does it need to be built? What problems does it solve? What does it help you learn?\n'),
         default: 'Here is a little bit about the project...'
     },{
+        type: 'confirm',
+        name: 'documentation', // #DOCUMENTATION
+        message: colors.underline('Are you using github wiki for documentation?\n'),
+        default: true
+    },{
         type: 'checkbox',
         name: 'installation', // #INSTALLATION
         message: colors.underline('Does your project require installation? If so, how?\n') + colors.grey(' (- Note: Each choice will populate a template for you to fill out further -)\n') + checkboxGuideText,
-        choices: [
-            'Web-App(URL)',
-            'Desktop-App(Windows)',
-            'Desktop-App(MacOS)',
-            'Desktop-App(Linux)',
-            'Terminal-App(Node)'
-        ],
+        choices: installations,
     },{
         type: 'input',
         name: 'usage', // #USAGE
@@ -59,6 +60,7 @@ export const questions = [
             checked: true
         },{
             name:'donations',
+            checked: false
         }],
     },{
         type: 'input',
@@ -70,38 +72,12 @@ export const questions = [
         name: 'license', // #LICENSE
         message: colors.underline('What is the license you are using, or intend to use?\n') + colors.grey(' (- Note: Your choice will only really give you a pretty badge, you must ensure license information exists. -)\n'),
         choices: licenses,
+        default: licenses[0]
     },{
         type: 'checkbox',
         name: 'tableOfContents', // #TABLE OF CONTENTS
         message: colors.underline('What Sections do you want in your Table of Contents?\n') + checkboxGuideText, 
-        choices: [{
-            name:'Summary',
-            checked: true
-        },
-        {
-            name:'Installation',
-            checked: true
-        },
-        {
-            name:'Usage',
-            checked: true
-        },
-        {
-            name:'Contribution',
-            checked: true
-        },
-        {
-            name:'Collaboration',
-            checked: true
-        },
-        {
-            name:'Credits',
-            checked: true
-        },
-        {
-            name:'License',
-            checked: true
-        }]
+        choices: tableOfContents
     }
 ];
 

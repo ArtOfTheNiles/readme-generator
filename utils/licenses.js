@@ -25,11 +25,11 @@ export const licenses = [
 },{
     name: `[BSD 2-Clause]`,
     value: `[BSD 2-Clause]`,
-    badge: `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
+    badge: `[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)`,
 },{
     name: `[BSD 3-Clause]`,
     value: `[BSD 3-Clause]`,
-    badge: `[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)`,
+    badge: `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
 },{
     name: `[Creative Commons Zero 1.0]`,
     value: `[Creative Commons Zero 1.0]`,

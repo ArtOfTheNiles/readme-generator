@@ -28,8 +28,12 @@ function init() {
 
   inquirer.prompt(questions)
   .then((answers) => {
-    const parseData = JSON.stringify(answers);
-    const outputData = format(parseData);
+    let outputData = '';
+    try {
+        outputData = format(answers);
+    } catch (error) {
+        console.trace(colors.red("There is an error! " + error))
+    }
     writeToFile(outputData);
     })
   .catch((error) => {
