@@ -15,7 +15,7 @@ export const formatLicense = ( inputLicense ) => {
         output = 'Licensing information is coming soon! Please be patient while the project gets started.';
     }else{
         const currentLicense = licenses.find(({ name }) => name === inputLicense);
-        output = `${ls[0]}${currentLicense.value}${ls[1]}\n${currentLicense.badge}`;
+        output = `${ls[0]}${currentLicense.value}${ls[1]}\n\n${currentLicense.badge}`;
     }
 
     return `## License\n\n${output}\n`

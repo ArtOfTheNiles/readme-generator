@@ -32,7 +32,7 @@ function init() {
     try {
         outputData = format(answers);
     } catch (error) {
-        console.trace(colors.red("There is an error! " + error))
+        console.trace(colors.bgRed("There is an error! " + colors.yellow(error)));
     }
     writeToFile(outputData);
     })
