@@ -14,7 +14,7 @@ export const contributions = [{
     name:'Donations',
     value:'donations',
     output:`* [Keep the project alive](url) All donations are greatly appreciated!\n`,
-    checked: false
+    checked: true
 }];
 
 export default contributions;

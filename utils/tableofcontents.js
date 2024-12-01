@@ -5,11 +5,6 @@
 */
 export const tableOfContents = [
     {
-        name: `Summary`,
-        value: `Summary`,
-        output: `- [Summary](#summary)`,
-        checked: true,
-    },{
         name: `Installation`,
         value: `Installation`,
         output: `- [Installation](#installation)`,
@@ -25,11 +20,6 @@ export const tableOfContents = [
         output: `- [Contribution](#contribution)`,
         checked: true,
     },{
-        name: `Collaboration`,
-        value: `Collaboration`,
-        output: `- [Collaboration](#collaboration)`,
-        checked: true,
-    },{
         name: `Credits`,
         value: `Credits`,
         output: `- [Credits](#credits)`,
@@ -40,7 +30,6 @@ export const tableOfContents = [
         output: `- [License](#license)`,
         checked: true,
     }
-
 ];
 
 export default tableOfContents;
