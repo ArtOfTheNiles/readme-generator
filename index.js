@@ -15,12 +15,11 @@ const startMessage = [
 
 //This program just writes READMEs
 function writeToFile(data) {
-  const parseData = JSON.stringify(data);
-    fs.writeFile('./exports/README.md', parseData, function (error){
+    fs.writeFile('./exports/README.md', data, function (error){
     if(error) {
       console.error('Problem writing file: ', error)
     };
-    console.log(colors.yellow("I should have written a file!")); //Not getting here.
+    console.log(colors.rainbow("File created successfully!"));
   });
 }
 
@@ -29,9 +28,9 @@ function init() {
 
   inquirer.prompt(questions)
   .then((answers) => {
-    const outputData = format(answers);
-    console.log(`This is what 'answers' looks like before the write to file function\n${answers}`);
-    writeToFile(answers);
+    const parseData = JSON.stringify(answers);
+    const outputData = format(parseData);
+    writeToFile(outputData);
     })
   .catch((error) => {
     if (error.isTtyError) {

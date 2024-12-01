@@ -1,7 +1,7 @@
 import colors from 'colors';
+import licenses from './licenses.js';
 
 //Built-in affordance disappears on spacebar input, this is to supplement.
-//Maybe refactor this out.
 const cbFlair = [ 
     colors.green('(-- '),
     colors.green(' || '),
@@ -11,6 +11,7 @@ const cbFlair = [
     colors.white('Enter')
 ]
 
+// Construction: (-- Use Arrows to navigate || Spacebar to choose || Enter to finish --)
 const checkboxGuideText = colors.grey(` ${cbFlair[0]} Use ${cbFlair[3]} to navigate ${cbFlair[1]} ${cbFlair[4]} to choose ${cbFlair[1]} ${cbFlair[5]} to finish ${cbFlair[2]}\n`);
 
 
@@ -67,16 +68,8 @@ export const questions = [
     },{
         type: 'list',
         name: 'license', // #LICENSE
-        message: colors.underline('What is the license you are using, or intend to use?\n'),
-        choices: [
-            'None',
-            'Apache 2.0',
-            'GNU General Public License v3.0',
-            'Creative Commons 0 v1.0',
-            'MIT',
-            'Other'
-        ],
-        default: 'None'
+        message: colors.underline('What is the license you are using, or intend to use?\n') + colors.grey(' (- Note: Your choice will only really give you a pretty badge, you must ensure license information exists. -)\n'),
+        choices: licenses,
     },{
         type: 'checkbox',
         name: 'tableOfContents', // #TABLE OF CONTENTS

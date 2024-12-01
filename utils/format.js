@@ -1,8 +1,14 @@
+import formatLicense from './formatLicense.js';
+
 //This function expects the output from ./utils/questions.js
 export const format = (answers) => {
     // TODO: plan to format all strings through this fucntion
-    return `${answers}
-    `
+    return `This is what Raw answers looks like:
+${answers}
+
+Licensing Section:
+${formatLicense(answers.license)}
+`
 };
 
 const formatInstallation = () => {
@@ -35,35 +41,6 @@ return`## Contribution
 
 For those interested, here are ways that you can contribute to the project:
 ${outBugReport}${outReview}${outDonations}
-`
-};
-
-const formatLicense = ( licenseChoice ) => {
-    let output = '';
-switch (licenseChoice){
-    case 'None':
-        output = 'This project is currently unlicensed, tell your friends!';
-    break;
-    case 'Apache 2.0':
-        output = 'Licensed under the [Apache 2.0](LICENSE.txt) license.';
-    break;
-    case 'GNU General Public License v3.0':
-        output = 'Licensed under the [GNU General Public License v3.0](LICENSE.txt) license.';
-    break;
-    case 'Creative Commons 0 v1.0':
-        output = 'Licensed under the [Creative Commons Zero v1.0](LICENSE.txt) license.';
-    break;
-    case 'MIT':
-        output = 'Licensed under the [MIT](LICENSE.txt) license.';
-    break;
-    default:
-        output = 'Licensing information is coming soon! Please be patient while the project gets started.';
-}
-
-// (Template Literal Indent)
-return `## License
-
-${output}
 `
 };
 
