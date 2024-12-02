@@ -29,7 +29,8 @@ This is a terminal application designed to provide a template README.md file for
 
 Refer to the following video for instructions on how to use the program:
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/1035076639?h=01f084c303" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+https://github.com/user-attachments/assets/e9cb5aa9-a2a3-49d9-b69a-bc01446167e4
+
 
 
 
