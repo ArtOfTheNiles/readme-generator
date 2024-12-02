@@ -6,7 +6,7 @@
 # Project-specific files
 node_modules/
 .DS_store/
-utils/README.md
+utils/HomeWork.md
 exports/
 
 # User-specific files
