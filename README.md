@@ -1,6 +1,7 @@
-# Pumpkin Godzilla
+# ReadMe Generator
 
-Here is a little something to know about the project...
+This is a terminal application designed to provide a template README.md file for GitHub hosted repositories.
+
 
 
 
@@ -18,7 +19,7 @@ Here is a little something to know about the project...
 
 ## Installation
 
-* This app can be run in a modern browser at the following [URL](https://).
+* This app should be run in a terminal using Node.js, for more information visit [NodeJS](https://nodejs.org/en).
 
 
 
@@ -26,8 +27,10 @@ Here is a little something to know about the project...
 
 ## Usage
 
-Refer to the following video to use this program:
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/1035076639?h=01f084c303" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+Refer to the following video for instructions on how to use the program:
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/1035076639?h=01f084c303" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
 
 
 
@@ -58,12 +61,13 @@ Special thanks to friends and family for supporting this project.
 
 
 
+
 ## License
 
-Licensed under the [Open Data Commons: Public Domain Dedication](LICENSE.txt) license. 
+Licensed under the [MIT](LICENSE.txt) license. 
 
-[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-###### First created on: Sun Dec 01 2024 18:31:56 GMT-0500 (Eastern Standard Time)
+###### First created on: Sun Dec 01 2024 23:28:06 GMT-0500 (Eastern Standard Time)

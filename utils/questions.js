@@ -22,7 +22,7 @@ export const questions = [
         type: 'input',
         name: 'summary', // #SUMMARY
         message: colors.underline('Describe your project in a few sentences.\n') + colors.grey('  Why does it need to be built? What problems does it solve? What does it help you learn?\n'),
-        default: 'Here is a little something to know about the project...'
+        default: 'This is a terminal application designed to provide a template README.md file for GitHub hosted repositories.\n'
     },{
         type: 'confirm',
         name: 'documentation', // #DOCUMENTATION
@@ -37,7 +37,7 @@ export const questions = [
         type: 'input',
         name: 'usage', // #USAGE
         message: colors.underline('Describe the steps to using your project, how does a user get from A to B?\n') + colors.gray('  It is highly advisable to provide good directions.\n'),
-        default: 'To begin, just...'
+        default: 'Refer to the following video for instructions on how to use the program:\n'
     },{
         type: 'checkbox',
         name: 'contribution', // #CONTRIBUTION
@@ -47,7 +47,7 @@ export const questions = [
         type: 'input',
         name: 'credits', // #CREDITS/COLLABORATORS
         message: colors.underline('List any collaborators and credit major packages:\n'),
-        default: 'Special thanks to friends and family for supporting this project.'
+        default: 'Special thanks to friends and family for supporting this project.\n'
     },{
         type: 'list',
         name: 'license', // #LICENSE

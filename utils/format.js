@@ -3,11 +3,12 @@ import formatTableOfContents from './formatTableOfContents.js';
 import formatInstallation from './formatInstallations.js';
 import formatContribution from './formatContribution.js';
 import formatDocumentation from './formatDocumentation.js';
+import formatUsage from './formatUsage.js';
+import formatCredits from './formatCredits.js';
 
-// Main Function:
 export const format = (answers) => {
 
-    // Get each variable with a chance to modify:
+    // Get each answer with a chance to modify:
     const outputName = answers.projectName;
     const repo = answers.repository;
     const outputSummary = answers.summary;
@@ -18,6 +19,7 @@ export const format = (answers) => {
     const outputContribution = formatContribution(answers.contribution, repo);
     const outputCredits = formatCredits(answers.credits);
     const outputLicense = formatLicense(answers.license);
+    // Doesn't require 'answers'
     const outputDate = new Date();
 
 
@@ -35,16 +37,6 @@ ${outputLicense}\n---\n
 
     return outputFormat;
 };
-
-// Expects a string
-const formatCredits = ( credits ) => {
-    return `## Credits\n\n${credits}\n`;
-}
-
-// Expects a string
-const formatUsage = ( usage ) => {
-    return `## Usage\n\n${usage}\n`;
-}
 
 export default format;
 
